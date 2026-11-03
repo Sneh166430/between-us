@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Between Us ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #251344, #090817 65%, #050510);
+    color: white;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 80% 20%, #c7a4ff, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(2px 2px at 30% 85%, #d5b5ff, transparent),
+    radial-gradient(2px 2px at 90% 60%, white, transparent);
+    background-size: 250px 250px;
+    animation: sparkle 5s infinite alternate;
+}
+
+@keyframes sparkle {
+    from { opacity: .3; }
+    to { opacity: 1; }
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    position: relative;
+}
+
+.small {
+    color: #c7a4ff;
+    letter-spacing: 5px;
+    font-size: 11px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(42px, 12vw, 65px);
+    font-weight: normal;
+    background: linear-gradient(90deg, #fff, #d5a5ff, #fff);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 35px #a65aff55;
+}
+
+.subtitle {
+    color: #c6bdd9;
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.heart {
+    font-size: 43px;
+    margin: 35px 0;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 0 15px #ff5eaa);
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+button {
+    background: linear-gradient(120deg, #a66cff, #e18bcf);
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 35px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 25px #a66cff66;
+    margin-top: 25px;
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+.letter {
+    display: none;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 35px;
+    padding: 30px 24px;
+    border: 1px solid #bd91ff55;
+    border-radius: 20px;
+    background: #ffffff0b;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 35px #9d56ff22;
+    line-height: 2;
+    color: #e6d9ff;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    color: #827695;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<main class="container">
+
+    <div class="small">A PRIVATE WORLD FOR TWO</div>
+
+    <h1>Between Us</h1>
+
+    <p class="subtitle">
+        Some feelings are too beautiful<br>
+        to be left unsaid.
+    </p>
+
+    <div class="heart">♡</div>
+
+    <button onclick="openLetter()">
+        Open Our Little World ✨
+    </button>
+
+    <div class="letter" id="letter">
+        <h2>Dear You, ❤️</h2>
+        <p>
+            Somewhere between all the stars<br>
+            and all the moments of life,<br>
+            there is a little world that belongs<br>
+            only to us.
+            <br><br>
+            A place for our thoughts,<br>
+            our letters, our memories<br>
+            and everything we never want to forget.
+            <br><br>
+            Welcome to Between Us. 💌
+        </p>
+    </div>
+
+    <footer>JUST US, ALWAYS · ♡</footer>
+
+</main>
+
+<script>
+function openLetter() {
+    const letter = document.getElementById("letter");
+    letter.style.display = "block";
+    letter.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+</script>
+
+</body>
+</html>
