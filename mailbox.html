@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Mailbox ❤️ | Between Us</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #090016, #19002e, #10001c);
+    color: white;
+    padding: 25px 15px;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#c78aff 1px, transparent 1px);
+    background-size: 65px 65px, 100px 100px;
+    opacity: .35;
+}
+
+.container {
+    position: relative;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.heart {
+    font-size: 55px;
+    animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.15); }
+}
+
+h1 {
+    font-size: 36px;
+    color: #e6baff;
+    margin: 15px 0;
+}
+
+.subtitle {
+    color: #cbb4dd;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.mailbox {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(214,160,255,0.35);
+    border-radius: 22px;
+    padding: 25px;
+    box-shadow: 0 0 35px rgba(172,75,255,0.15);
+    text-align: left;
+}
+
+label {
+    display: block;
+    color: #e8c8ff;
+    margin: 15px 0 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #69418a;
+    background: rgba(10,0,25,0.8);
+    color: white;
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    border-color: #d19aff;
+    box-shadow: 0 0 10px #a34be8;
+}
+
+button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#8d38c9,#d47bff);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+}
+
+#status {
+    text-align: center;
+    margin-top: 18px;
+    color: #e6baff;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 25px;
+    color: #d8a6ff;
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 45px;
+    color: #9878ad;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+    <div class="heart">💌</div>
+
+    <h1>Our Little Mailbox</h1>
+
+    <p class="subtitle">
+        A little place for all the words in our hearts.
+    </p>
+
+    <div class="mailbox">
+
+        <form id="letterForm">
+
+            <label>To My Love ❤️</label>
+            <input
+                type="text"
+                id="recipient"
+                placeholder="Your love's name..."
+                required
+            >
+
+            <label>From 💜</label>
+            <input
+                type="text"
+                id="sender"
+                placeholder="Your name..."
+                required
+            >
+
+            <label>Subject ✨</label>
+            <input
+                type="text"
+                id="subject"
+                placeholder="A little something..."
+                required
+            >
+
+            <label>Your Love Letter 💌</label>
+            <textarea
+                id="message"
+                placeholder="Write everything your heart wants to say..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Love Letter ❤️
+            </button>
+
+        </form>
+
+        <p id="status"></p>
+
+    </div>
+
+    <a href="index.html" class="back">
+        ← Back to Between Us
+    </a>
+
+    <footer>
+        Made with love, just for us. ❤️
+        <br><br>
+        Two hearts. One little universe.
+    </footer>
+
+</div>
+
+<script>
+document.getElementById("letterForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    document.getElementById("status").textContent =
+    "Your letter is ready for our little universe. ❤️";
+
+});
+
+</script>
+
+</body>
+</html>
