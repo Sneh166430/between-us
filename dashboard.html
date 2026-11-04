@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Universe ❤️ | Between Us</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 20px;
+    font-family: Georgia, serif;
+    color: white;
+    background: linear-gradient(135deg,#080014,#1c0032,#0b0018);
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#d69aff 1px,transparent 1px);
+    background-size: 65px 65px,100px 100px;
+    opacity: .3;
+}
+
+.container {
+    position: relative;
+    max-width: 950px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    padding: 45px 10px 35px;
+}
+
+.heart {
+    font-size: 60px;
+    animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+    50% {transform:scale(1.15);}
+}
+
+h1 {
+    font-size: clamp(35px,7vw,55px);
+    color: #e6baff;
+    margin: 15px 0;
+    text-shadow: 0 0 20px #a34be8;
+}
+
+.subtitle {
+    color: #cbb4dc;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.welcome {
+    text-align: center;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(210,160,255,.3);
+    padding: 25px;
+    border-radius: 22px;
+    line-height: 1.8;
+    color: #e5c9f6;
+    margin-bottom: 35px;
+}
+
+.welcome h2 {
+    color: #e6baff;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    color: #e6baff;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(210,160,255,.3);
+    border-radius: 20px;
+    padding: 30px 20px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #e1aaff;
+    box-shadow: 0 0 25px rgba(170,80,230,.25);
+}
+
+.card-icon {
+    font-size: 43px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #e8c2ff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #c5a8d9;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.quote {
+    text-align: center;
+    padding: 45px 15px;
+    font-size: 21px;
+    line-height: 1.8;
+    color: #e5baff;
+}
+
+.logout {
+    display: block;
+    margin: 15px auto 30px;
+    border: 1px solid #a96bcb;
+    border-radius: 25px;
+    padding: 12px 28px;
+    background: transparent;
+    color: #e8c6ff;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background: rgba(180,100,230,.2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #9675ac;
+    font-size: 13px;
+}
+
+@media(max-width:500px) {
+    .welcome {padding:20px;}
+    .section-title {font-size:23px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+<header>
+    <div class="heart">💜</div>
+    <h1>Between Us</h1>
+    <p class="subtitle">
+        Welcome to our little universe.
+    </p>
+</header>
+
+<section class="welcome">
+    <h2>Our Private World ✨</h2>
+
+    A little place made just for us.
+    <br>
+    Where every letter, every memory,
+    and every little moment belongs to our story.
+    <br><br>
+    No matter how far apart we are,
+    this is where our hearts meet. ❤️
+</section>
+
+<h2 class="section-title">Explore Our Universe 🌙</h2>
+
+<section class="grid">
+
+    <a href="mailbox.html" class="card">
+        <div class="card-icon">💌</div>
+        <h3>Write a Letter</h3>
+        <p>Send your love through words.</p>
+    </a>
+
+    <a href="inbox.html" class="card">
+        <div class="card-icon">📩</div>
+        <h3>Our Inbox</h3>
+        <p>Read the letters waiting for you.</p>
+    </a>
+
+    <a href="sent.html" class="card">
+        <div class="card-icon">💜</div>
+        <h3>Sent Letters</h3>
+        <p>Revisit the words you have sent.</p>
+    </a>
+
+    <a href="memories.html" class="card">
+        <div class="card-icon">📸</div>
+        <h3>Our Memories</h3>
+        <p>Every moment deserves a place.</p>
+    </a>
+
+    <a href="index.html" class="card">
+        <div class="card-icon">🏠</div>
+        <h3>Our Home</h3>
+        <p>Return to the beginning of our story.</p>
+    </a>
+
+</section>
+
+<div class="quote">
+    "Two hearts, two places,
+    <br>
+    one beautiful universe."
+    <br><br>
+    Forever Us. ❤️
+</div>
+
+<button class="logout" onclick="location.href='login.html'">
+    ↩ Back to Login
+</button>
+
+<footer>
+    Made with love, just for us.
+    <br><br>
+    Between Us © 2026
+</footer>
+
+</div>
+
+</body>
+</html>
