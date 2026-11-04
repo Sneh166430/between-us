@@ -247,7 +247,15 @@ button:active {
 document.getElementById("codeForm").addEventListener("submit", function(event) {
   event.preventDefault();
 
-  document.getElementById("message").style.display = "block";
+  const code = document.getElementById("secretCode").value;
+
+  if (code === "jaan123") {
+    window.location.href = "dashboard.html";
+  } else {
+    const message = document.getElementById("message");
+    message.textContent = "Oops! Wrong secret code. Try again, Jaan. ❤️";
+    message.style.display = "block";
+  }
 });
 </script>
 
