@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Between Us | Private Login</title>
+<title>Between Us | Welcome Jaan</title>
 
 <style>
 * {
@@ -15,13 +15,15 @@
 
 body {
   min-height: 100vh;
-  background: radial-gradient(ellipse at top, #35194e, #130b21 65%, #05040d);
-  color: #f5eaff;
+  background:
+    radial-gradient(ellipse at top, #51246c 0%, #21102f 48%, #090611 100%);
+  color: #fff0ff;
   font-family: Georgia, serif;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 22px;
+  align-items: center;
+  padding: 24px;
+  overflow-x: hidden;
 }
 
 .stars {
@@ -29,128 +31,152 @@ body {
   inset: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
-    radial-gradient(2px 2px at 70% 20%, #fff, transparent),
-    radial-gradient(2px 2px at 40% 80%, #fff, transparent);
-  background-size: 230px 230px;
-  opacity: .45;
+    radial-gradient(2px 2px at 15% 20%, white, transparent),
+    radial-gradient(2px 2px at 80% 30%, #ffc9f5, transparent),
+    radial-gradient(2px 2px at 45% 70%, white, transparent),
+    radial-gradient(2px 2px at 90% 85%, white, transparent),
+    radial-gradient(2px 2px at 25% 90%, #e7b5ff, transparent);
+  background-size: 250px 250px;
+  opacity: .65;
 }
 
 .container {
   width: 100%;
-  max-width: 420px;
-  text-align: center;
+  max-width: 440px;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
-.tagline {
-  font-size: 11px;
+.topline {
+  font-size: 10px;
   letter-spacing: 5px;
-  color: #c99aff;
-  margin-bottom: 25px;
+  color: #e6b7ff;
+  margin-bottom: 30px;
 }
 
 .heart {
-  font-size: 55px;
+  font-size: 70px;
+  color: #ff9bd9;
+  text-shadow: 0 0 20px #ff68d5, 0 0 50px #bd4cff;
+  animation: heartbeat 2s infinite;
   margin-bottom: 15px;
-  animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-  50% { transform: scale(1.15); }
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.13); }
 }
 
 h1 {
-  font-size: 46px;
+  font-size: 45px;
   font-weight: normal;
-  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px #d28cff;
+}
+
+.welcome {
+  color: #ffb9e6;
+  font-size: 19px;
+  margin-top: 12px;
 }
 
 .subtitle {
-  color: #c9b8dc;
-  line-height: 1.8;
-  margin-bottom: 35px;
+  color: #d4c0e8;
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 20px 0 30px;
 }
 
 .card {
-  padding: 30px 23px;
-  border: 1px solid #76539b;
+  padding: 32px 25px;
+  border: 1px solid #a66ac8;
   border-radius: 25px;
-  background: #ffffff0b;
-  box-shadow: 0 0 35px #a855f722;
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,.055);
+  box-shadow: 0 0 40px rgba(196,94,255,.16);
+  backdrop-filter: blur(14px);
 }
 
-h2 {
+.card h2 {
+  font-size: 25px;
   font-weight: normal;
-  font-size: 27px;
   margin-bottom: 12px;
 }
 
 .card p {
-  color: #c9b8dc;
-  font-size: 14px;
-  margin-bottom: 25px;
-}
-
-label {
-  display: block;
-  text-align: left;
-  margin: 17px 0 9px;
-  font-size: 14px;
+  color: #d9c6e9;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 24px;
 }
 
 input {
   width: 100%;
-  padding: 15px;
-  border-radius: 12px;
-  border: 1px solid #76539b;
-  background: #171022;
+  padding: 17px;
+  border-radius: 14px;
+  border: 1px solid #a66ac8;
+  background: rgba(12,5,24,.8);
   color: white;
-  font-size: 15px;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 6px;
   outline: none;
 }
 
 input:focus {
-  border-color: #d58bff;
+  border-color: #ff9bd9;
+  box-shadow: 0 0 18px #d46aff55;
+}
+
+input::placeholder {
+  color: #9b82ad;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
 button {
   width: 100%;
   padding: 16px;
-  margin-top: 25px;
+  margin-top: 22px;
   border: none;
-  border-radius: 35px;
-  background: linear-gradient(100deg, #a35df2, #df83cc);
+  border-radius: 40px;
+  background: linear-gradient(100deg, #a44ee8, #ed83c6);
   color: white;
+  font-family: Georgia, serif;
   font-size: 16px;
   cursor: pointer;
+  box-shadow: 0 0 22px #c45aff55;
+  transition: .3s;
 }
 
-.notice {
+button:active {
+  transform: scale(.97);
+}
+
+.message {
   display: none;
   margin-top: 20px;
-  padding: 13px;
-  border-radius: 10px;
-  background: #3b203f;
-  color: #f3d6ff;
+  padding: 14px;
+  border-radius: 13px;
+  background: #48244f;
+  color: #ffd8f2;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.back {
-  display: inline-block;
-  margin-top: 25px;
-  color: #d6b2fa;
-  text-decoration: none;
+.love-note {
+  color: #d8b8ed;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-top: 28px;
+  font-style: italic;
 }
 
 .footer {
+  color: #9e83b5;
+  font-size: 10px;
+  letter-spacing: 4px;
   margin-top: 30px;
-  color: #9881aa;
-  letter-spacing: 3px;
-  font-size: 11px;
 }
 </style>
 </head>
@@ -161,64 +187,73 @@ button {
 
 <main class="container">
 
-  <div class="tagline">A PRIVATE WORLD FOR TWO</div>
+  <div class="topline">A LITTLE UNIVERSE FOR TWO</div>
 
-  <div class="heart">♡</div>
+  <div class="heart">♥</div>
 
   <h1>Between Us</h1>
 
+  <div class="welcome">Welcome Back, Jaan ❤️</div>
+
   <p class="subtitle">
-    Two hearts.<br>
-    One little universe.<br>
-    A place only for us.
+    Jaan, your little world is waiting for you.<br>
+    A place where every letter holds a piece of love.
   </p>
 
   <section class="card">
 
-    <h2>Welcome Back ❤️</h2>
+    <h2>One Little Secret ✨</h2>
 
-    <p>Your little world is waiting for you.</p>
+    <p>
+      Jaan, enter our special secret code<br>
+      to unlock our little universe.
+    </p>
 
-    <form id="loginForm">
+    <form id="codeForm">
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email"
-      placeholder="Enter your email" required>
-
-      <label for="password">Your Password</label>
-      <input type="password" id="password"
-      placeholder="Enter your password" required>
+      <input
+        type="password"
+        id="secretCode"
+        placeholder="Enter Secret Code"
+        autocomplete="off"
+        required
+      >
 
       <button type="submit">
-        Enter Our World ✨
+        Unlock Our Little World 💌
       </button>
 
     </form>
 
-    <div class="notice" id="notice">
-      Our secure login system is being prepared.
-      Please come back soon. ❤️
+    <div class="message" id="message">
+      Jaan, our secure little world is still being prepared.
+      Your letters and memories will be waiting here soon. ❤️
     </div>
 
   </section>
 
-  <a href="index.html" class="back">
-    ← Back to Our Beginning
-  </a>
+  <div class="love-note">
+    "No matter how far we are, Jaan,<br>
+    you will always have a home in my heart."
+  </div>
 
   <div class="footer">
-    JUST US, ALWAYS · ♡
+    JUST YOU & ME · FOREVER ♡
   </div>
 
 </main>
 
 <script>
-document.getElementById("loginForm")
-.addEventListener("submit", function(event) {
+document.getElementById("codeForm").addEventListener("submit", function(event) {
   event.preventDefault();
-  document.getElementById("notice").style.display = "block";
+
+  document.getElementById("message").style.display = "block";
 });
 </script>
 
 </body>
 </html>
+
+
+
+  
