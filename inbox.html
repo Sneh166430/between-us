@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Inbox ❤️ | Between Us</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 25px 15px;
+    font-family: Georgia, serif;
+    color: white;
+    background: linear-gradient(135deg,#080014,#1c0032,#0b0018);
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#d69aff 1px,transparent 1px);
+    background-size: 65px 65px,100px 100px;
+    opacity: .3;
+}
+
+.container {
+    position: relative;
+    max-width: 700px;
+    margin: 35px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.heart {
+    font-size: 55px;
+    animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.15); }
+}
+
+h1 {
+    font-size: 40px;
+    color: #e6baff;
+    margin: 15px 0;
+    text-shadow: 0 0 20px #a34be8;
+}
+
+.subtitle {
+    color: #cbb4dc;
+    font-style: italic;
+}
+
+.summary {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: rgba(255,255,255,.07);
+    border: 1px solid #70418e;
+    border-radius: 15px;
+    padding: 15px 25px;
+    text-align: center;
+    color: #e6baff;
+}
+
+.stat strong {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    color: #e4b5ff;
+    margin: 30px 0 18px;
+    font-size: 23px;
+}
+
+.letter-list {
+    display: grid;
+    gap: 15px;
+}
+
+.letter {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(210,160,255,.3);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.letter:hover {
+    transform: translateY(-3px);
+    border-color: #d9a0ff;
+    box-shadow: 0 0 20px rgba(170,80,230,.2);
+}
+
+.envelope {
+    font-size: 38px;
+}
+
+.letter-info {
+    flex: 1;
+}
+
+.letter-info h3 {
+    color: #f0d6ff;
+    margin-bottom: 7px;
+}
+
+.letter-info p {
+    color: #bfa5d1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.tag {
+    font-size: 11px;
+    color: #f0caff;
+    border: 1px solid #a96bcb;
+    padding: 5px 9px;
+    border-radius: 20px;
+}
+
+.empty {
+    text-align: center;
+    padding: 40px 15px;
+    color: #cbb4dc;
+    background: rgba(255,255,255,.05);
+    border-radius: 18px;
+    line-height: 2;
+}
+
+.empty span {
+    font-size: 45px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 12px 22px;
+    color: white;
+    background: linear-gradient(90deg,#8437bd,#c36bfa);
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.actions {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.actions button {
+    margin: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+    z-index: 10;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 480px;
+    background: linear-gradient(145deg,#28113d,#12001f);
+    border: 1px solid #b47ad8;
+    border-radius: 20px;
+    padding: 30px 22px;
+    box-shadow: 0 0 35px rgba(170,80,230,.3);
+}
+
+.modal-content h2 {
+    color: #e8baff;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    color: #e2c9f1;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin-bottom: 22px;
+}
+
+footer {
+    text-align: center;
+    color: #9675ac;
+    font-size: 13px;
+    margin-top: 40px;
+}
+
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #d9a5ff;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+<header>
+    <div class="heart">💌</div>
+    <h1>Our Little Inbox</h1>
+    <p class="subtitle">
+        Every letter is a little piece of someone's heart.
+    </p>
+</header>
+
+<div class="summary">
+    <div class="stat">
+        <strong id="total">0</strong>
+        Total Letters
+    </div>
+
+    <div class="stat">
+        <strong id="unread">0</strong>
+        Unread
+    </div>
+</div>
+
+<h2 class="section-title">Received With Love ❤️</h2>
+
+<div id="letterList" class="letter-list"></div>
+
+<div class="actions">
+    <button onclick="location.href='mailbox.html'">
+        ✉️ Write a Letter
+    </button>
+
+    <button onclick="location.href='memories.html'">
+        💜 Our Memories
+    </button>
+</div>
+
+<a href="index.html" class="back">
+    ← Back to Between Us
+</a>
+
+<footer>
+    A little inbox, a lot of love. ❤️
+    <br><br>
+    Two hearts. One little universe.
+</footer>
+
+</div>
+
+<div class="modal" id="letterModal">
+    <div class="modal-content">
+        <h2 id="modalTitle">A Letter For You 💌</h2>
+        <p id="modalBody"></p>
+        <button onclick="closeLetter()">Close Letter ❤️</button>
+    </div>
+</div>
+
+<script>
+/*
+DEMO MODE:
+These are sample letters for design testing.
+Real letters will appear here after Supabase integration.
+*/
+
+const letters = [];
+
+function renderLetters() {
+    const list = document.getElementById("letterList");
+
+    document.getElementById("total").textContent =
+        letters.length;
+
+    document.getElementById("unread").textContent =
+        letters.filter(letter => !letter.read).length;
+
+    if (letters.length === 0) {
+        list.innerHTML = `
+            <div class="empty">
+                <span>💌</span>
+                <br>
+                Your inbox is waiting for a little love.
+                <br>
+                No letters yet, but your story is just beginning.
+                <br>
+                ❤️
+            </div>
+        `;
+        return;
+    }
+
+    list.innerHTML = "";
+
+    letters.forEach((letter, index) => {
+        const card = document.createElement("div");
+        card.className = "letter";
+
+        const envelope = document.createElement("div");
+        envelope.className = "envelope";
+        envelope.textContent = letter.read ? "✉️" : "💌";
+
+        const info = document.createElement("div");
+        info.className = "letter-info";
+
+        const title = document.createElement("h3");
+        title.textContent = letter.subject;
+
+        const preview = document.createElement("p");
+        preview.textContent = "From: " + letter.sender;
+
+        info.append(title, preview);
+
+        const tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = letter.read ? "READ" : "NEW";
+
+        card.append(envelope, info, tag);
+
+        card.addEventListener("click", () => openLetter(index));
+
+        list.appendChild(card);
+    });
+}
+
+function openLetter(index) {
+    const letter = letters[index];
+
+    letter.read = true;
+
+    document.getElementById("modalTitle").textContent =
+        letter.subject + " 💌";
+
+    document.getElementById("modalBody").textContent =
+        "From: " + letter.sender + "\n\n" + letter.message;
+
+    document.getElementById("letterModal").style.display =
+        "flex";
+
+    renderLetters();
+}
+
+function closeLetter() {
+    document.getElementById("letterModal").style.display =
+        "none";
+}
+
+renderLetters();
+</script>
+
+</body>
+</html>
